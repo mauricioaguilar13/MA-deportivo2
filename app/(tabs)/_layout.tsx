@@ -7,7 +7,7 @@ export default function TabLayout() {
     <Tabs screenOptions={{ 
       tabBarActiveTintColor: "#007AFF",
       headerShown: true,
-      headerTitle: "MA Deportivo"
+      headerTitle: "MA Deportivo" 
     }}>
       <Tabs.Screen
         name="futbol"
