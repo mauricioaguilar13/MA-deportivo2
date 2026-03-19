@@ -16,8 +16,10 @@ export default function FutbolScreen() {
           <View style={[styles.imagePlaceholder, { backgroundColor: item.color }]} />
           <Text style={styles.productName}>{item.nombre}</Text>
           <View style={styles.row}>
-            <Text style={styles.price}>{item.price || item.precio}</Text>
-            <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>Ver</Text></TouchableOpacity>
+            <Text style={styles.price}>{item.precio}</Text>
+            <TouchableOpacity style={styles.button}>
+              <Text style={styles.buttonText}>Ver</Text>
+            </TouchableOpacity>
           </View>
         </View>
       ))}
