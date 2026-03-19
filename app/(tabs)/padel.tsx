@@ -26,7 +26,7 @@ const PRODUCTOS_PADEL: Producto[] = [
   },
   {
     id: 2,
-    nombre: "Pelotas de Pádel",
+    nombre: "Pelotas de Padel",
     precio: 12,
     imagen: require("../../assets/images/pelotas_padel.jpg"),
   },
@@ -44,7 +44,7 @@ const PRODUCTOS_PADEL: Producto[] = [
   },
   {
     id: 5,
-    nombre: "Camiseta Pádel",
+    nombre: "Camiseta Padel",
     precio: 30,
     imagen: require("../../assets/images/camisa_padel.jpg"),
   },
@@ -58,7 +58,7 @@ export default function Padel() {
 
   return (
     <ScrollView style={styles.container}>
-      <Text style={styles.titulo}>Artículos de Pádel</Text>
+      <Text style={styles.titulo}>Artículos de Padel</Text>
       {PRODUCTOS_PADEL.map((item) => (
         <View key={item.id} style={styles.card}>
           <Image source={item.imagen} style={styles.img} />
