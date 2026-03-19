@@ -1,11 +1,6 @@
 import React from "react";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { Tabs } from "expo-router";
-import { Stack } from "expo-router";
-
-export default function RootLayout() {
-  return <Stack screenOptions={{ headerShown: false }} />;
-}
 
 export default function TabLayout() {
   return (
@@ -66,7 +61,7 @@ export default function TabLayout() {
         }}
       />
 
-      {/* Ocultas */}
+      {/* OCULTAS (no salen en el menú) */}
       <Tabs.Screen name="index" options={{ href: null }} />
       <Tabs.Screen name="f1" options={{ href: null }} />
       <Tabs.Screen name="noticias" options={{ href: null }} />
