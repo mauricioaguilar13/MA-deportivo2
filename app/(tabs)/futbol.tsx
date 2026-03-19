@@ -1,46 +1,24 @@
-import React from "react";
-import {
-  Button,
-  Image,
-  ImageSourcePropType,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View
-} from "react-native";
-import { agregarAlCarrito } from "../store/cart";
-import { View, Text } from "react-native";
-
-export default function Futbol() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Fútbol</Text>
-    </View>
-  );
-}
-
-interface Producto {
-  id: number;
-  nombre: string;
-  precio: number;
-  imagen: ImageSourcePropType;
-}
-
-const productosFutbol: Producto[] = [
-  { id: 1, nombre: "Camiseta Oficial", precio: 85, imagen: require("../../assets/images/logo.png") },
-  { id: 2, nombre: "Balón de Liga", precio: 30, imagen: require("../../assets/images/logo.png") },
-];
+import React from 'react';
+import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
 
 export default function FutbolScreen() {
+  const productos = [
+    { id: 1, nombre: "Balón Adidas UCL", precio: "$150", color: "#ffffff" },
+    { id: 2, nombre: "Tacos Nike Mercurial", precio: "$180", color: "#10b981" },
+    { id: 3, nombre: "Guantes de Portero", precio: "$45", color: "#f59e0b" },
+  ];
+
   return (
     <ScrollView style={styles.container}>
-      <Text style={styles.title}>Sección de Fútbol</Text>
-      {productosFutbol.map((item) => (
-        <View key={item.id} style={styles.productCard}>
-          <Image source={item.imagen} style={styles.image} />
+      <Text style={styles.header}>Tienda de Fútbol</Text>
+      {productos.map((item) => (
+        <View key={item.id} style={styles.card}>
+          <View style={[styles.imagePlaceholder, { backgroundColor: item.color }]} />
           <Text style={styles.productName}>{item.nombre}</Text>
-          <Text style={styles.productPrice}>${item.precio}</Text>
-          <Button title="Agregar" onPress={() => agregarAlCarrito(item)} />
+          <View style={styles.row}>
+            <Text style={styles.price}>{item.price || item.precio}</Text>
+            <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>Ver</Text></TouchableOpacity>
+          </View>
         </View>
       ))}
     </ScrollView>
@@ -48,10 +26,13 @@ export default function FutbolScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20, backgroundColor: "#fff" },
-  title: { fontSize: 24, fontWeight: "bold", marginBottom: 20, textAlign: "center" },
-  productCard: { marginBottom: 30, alignItems: "center", borderBottomWidth: 1, borderBottomColor: "#eee", paddingBottom: 20 },
-  image: { width: 150, height: 150, marginBottom: 10 },
-  productName: { fontSize: 18, fontWeight: "500" },
-  productPrice: { fontSize: 16, color: "#888", marginBottom: 10 },
+  container: { flex: 1, backgroundColor: '#f3f4f6', padding: 16 },
+  header: { fontSize: 24, fontWeight: 'bold', color: '#1f2937', marginBottom: 16 },
+  card: { backgroundColor: '#fff', borderRadius: 16, padding: 16, marginBottom: 16, elevation: 3 },
+  imagePlaceholder: { width: '100%', height: 120, borderRadius: 8, marginBottom: 12 },
+  productName: { fontSize: 18, fontWeight: '600', color: '#374151' },
+  row: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 8 },
+  price: { fontSize: 20, fontWeight: 'bold', color: '#2563eb' },
+  button: { backgroundColor: '#1f2937', paddingVertical: 8, paddingHorizontal: 16, borderRadius: 20 },
+  buttonText: { color: '#fff', fontWeight: '500' }
 });
