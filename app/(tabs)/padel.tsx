@@ -1,25 +1,46 @@
 import React from 'react';
-import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 
 export default function PadelScreen() {
+
   const productos = [
     { id: 1, nombre: "Pala Bullpadel", precio: "$250", color: "#3b82f6" },
     { id: 2, nombre: "Pelotas Head (3pcs)", precio: "$15", color: "#facc15" },
     { id: 3, nombre: "Zapatillas Asics", precio: "$120", color: "#f87171" },
   ];
 
+  // ✅ Función para comprar (WhatsApp)
+  const comprar = (nombre, precio) => {
+    const numero = "50496588163";
+    const mensaje = `Hola, quiero comprar ${nombre} con precio ${precio}`;
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+
+    // Esto abre WhatsApp
+    import('react-native').then(({ Linking }) => {
+      Linking.openURL(url);
+    });
+  };
+
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.header}>Tienda de Padel</Text>
+
       {productos.map((item) => (
         <View key={item.id} style={styles.card}>
           <View style={[styles.imagePlaceholder, { backgroundColor: item.color }]} />
+          
           <Text style={styles.productName}>{item.nombre}</Text>
+
           <View style={styles.row}>
             <Text style={styles.price}>{item.precio}</Text>
-            <TouchableOpacity style={styles.button}>
+
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => comprar(item.nombre, item.precio)}
+            >
               <Text style={styles.buttonText}>Agregar</Text>
             </TouchableOpacity>
+
           </View>
         </View>
       ))}
