@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesome6 } from "@expo/vector-icons"; // Cambiado a FontAwesome6
 import { Tabs } from "expo-router";
-
+npx expo install @expo/vector-icons
 export default function TabLayout() {
   return (
     <Tabs
