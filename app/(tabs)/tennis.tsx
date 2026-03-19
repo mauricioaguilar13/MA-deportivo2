@@ -21,7 +21,7 @@ const PRODUCTOS_TENNIS: Producto[] = [
   {
     id: 1,
     nombre: "Raqueta Tennis",
-    precio: 180,
+    precio: 190,
     imagen: require("../../assets/images/raqueta.jpg"),
   },
   {
