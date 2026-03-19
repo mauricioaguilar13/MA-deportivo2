@@ -19,7 +19,7 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: "#007AFF",
-        tabBarLabelStyle: { fontSize: 10 }, // Texto más pequeño para que quepan todos
+        tabBarLabelStyle: { fontSize: 10 },
         headerTitle: () => <LogoHeader />,
         headerTitleAlign: "center",
         headerStyle: {
