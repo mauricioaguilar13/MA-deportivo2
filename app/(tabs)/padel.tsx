@@ -30,15 +30,11 @@ export default function PadelScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#f3f4f6', padding: 16 },
   header: { fontSize: 24, fontWeight: 'bold', color: '#1f2937', marginBottom: 16 },
-  card: { 
-    backgroundColor: '#fff', 
+ card: { 
+    backgroundColor: '#ffffff', 
     borderRadius: 16, 
     padding: 16, 
     marginBottom: 16,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
     elevation: 3
   },
   imagePlaceholder: { width: '100%', height: 120, borderRadius: 8, marginBottom: 12 },
