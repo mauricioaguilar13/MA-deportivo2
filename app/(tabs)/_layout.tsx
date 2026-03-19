@@ -1,10 +1,8 @@
 import React from "react";
-// Corregido: La librería correcta es vector-icons
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { Tabs } from "expo-router";
 import { Image, StyleSheet, View } from "react-native";
 
-// Componente para el Logo
 function LogoHeader() {
   return (
     <View style={styles.logoContainer}>
@@ -25,7 +23,7 @@ export default function TabLayout() {
         headerTitleAlign: "center",
         headerStyle: {
           backgroundColor: "#fff",
-          height: 110, // Un poco más de altura para el logo
+          height: 110,
         },
       }}
     >
@@ -99,7 +97,6 @@ export default function TabLayout() {
         }}
       />
 
-      {/* Ocultamos el index de la barra inferior para que no se repita */}
       <Tabs.Screen name="index" options={{ href: null }} />
     </Tabs>
   );
