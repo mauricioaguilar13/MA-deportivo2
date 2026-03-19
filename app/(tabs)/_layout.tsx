@@ -4,11 +4,7 @@ import { Tabs } from "expo-router";
 
 export default function TabLayout() {
   return (
-    <Tabs screenOptions={{ 
-      tabBarActiveTintColor: "#007AFF",
-      headerShown: true,
-      headerTitle: "MA Deportivo" 
-    }}>
+    <Tabs screenOptions={{ tabBarActiveTintColor: "#007AFF" }}>
       <Tabs.Screen
         name="futbol"
         options={{
@@ -37,7 +33,6 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <FontAwesome size={24} name="dribbble" color={color} />,
         }}
       />
-      {/* Ocultamos las que no estamos usando para evitar errores */}
       <Tabs.Screen name="index" options={{ href: null }} />
       <Tabs.Screen name="f1" options={{ href: null }} />
       <Tabs.Screen name="noticias" options={{ href: null }} />
