@@ -1,23 +1,9 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text } from "react-native";
 
-export default function PadelScreen() {
+export default function Padel() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Sección de Padel Lista</Text>
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Text>Padel</Text>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: { 
-    flex: 1, 
-    justifyContent: 'center', 
-    alignItems: 'center', 
-    backgroundColor: '#fff' 
-  },
-  text: { 
-    fontSize: 20, 
-    fontWeight: 'bold' 
-  }
-});
