@@ -3,23 +3,22 @@ import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-nati
 
 export default function PadelScreen() {
   const productos = [
-    { id: 1, nombre: "Pala Bullpadel", precio: "$250", color: "bg-blue-500" },
-    { id: 2, nombre: "Pelotas Head (3pcs)", precio: "$15", color: "bg-yellow-400" },
-    { id: 3, nombre: "Zapatillas Asics", precio: "$120", color: "bg-red-400" },
+    { id: 1, nombre: "Pala Bullpadel", precio: "$250", color: "#3b82f6" },
+    { id: 2, nombre: "Pelotas Head (3pcs)", precio: "$15", color: "#facc15" },
+    { id: 3, nombre: "Zapatillas Asics", precio: "$120", color: "#f87171" },
   ];
 
   return (
-    <ScrollView className="flex-1 bg-gray-100 p-4">
-      <Text className="text-2xl font-bold text-gray-800 mb-4">Tienda de Padel</Text>
-      
+    <ScrollView style={styles.container}>
+      <Text style={styles.header}>Tienda de Padel</Text>
       {productos.map((item) => (
-        <View key={item.id} className="bg-white rounded-xl p-4 mb-4 shadow-md border border-gray-200">
-          <View className={`w-full h-32 rounded-lg mb-3 ${item.color} opacity-80`} />
-          <Text className="text-lg font-semibold text-gray-700">{item.nombre}</Text>
-          <View className="flex-row justify-between items-center mt-2">
-            <Text className="text-blue-600 font-bold text-xl">{item.precio}</Text>
-            <TouchableOpacity className="bg-blue-600 px-4 py-2 rounded-full">
-              <Text className="text-white font-medium">Agregar</Text>
+        <View key={item.id} style={styles.card}>
+          <View style={[styles.imagePlaceholder, { backgroundColor: item.color }]} />
+          <Text style={styles.productName}>{item.nombre}</Text>
+          <View style={styles.row}>
+            <Text style={styles.price}>{item.precio}</Text>
+            <TouchableOpacity style={styles.button}>
+              <Text style={styles.buttonText}>Agregar</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -27,3 +26,15 @@ export default function PadelScreen() {
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: '#f3f4f6', padding: 16 },
+  header: { fontSize: 24, fontWeight: 'bold', color: '#1f2937', marginBottom: 16 },
+  card: { backgroundColor: '#fff', borderRadius: 16, padding: 16, marginBottom: 16, shadowColor: '#000', shadowOpacity: 0.1, shadowRadius: 4, elevation: 3 },
+  imagePlaceholder: { width: '100%', hieght: 120, borderRadius: 8, marginBottom: 12, height: 120 },
+  productName: { fontSize: 18, fontWeight: '600', color: '#374151' },
+  row: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 8 },
+  price: { fontSize: 20, fontWeight: 'bold', color: '#2563eb' },
+  button: { backgroundColor: '#2563eb', paddingVertical: 8, paddingHorizontal: 16, borderRadius: 99 },
+  buttonText: { color: '#fff', fontWeight: '500' }
+});
