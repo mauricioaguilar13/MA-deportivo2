@@ -1,24 +1,5 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Redirect } from 'expo-router';
 
-export default function Home() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>M&A Deportivo 2</Text>
-      <Text>Bienvenido a la tienda deportiva</Text>
-      <Text>Selecciona un deporte en las pestañas</Text>
-    </View>
-  );
+export default function Index() {
+  return <Redirect href="/futbol" />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-
-  title: {
-    fontSize: 28,
-    fontWeight: "bold",
-  },
-});
