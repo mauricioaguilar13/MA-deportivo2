@@ -19,6 +19,7 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: "#007AFF",
+        tabBarLabelStyle: { fontSize: 10 }, // Texto más pequeño para que quepan todos
         headerTitle: () => <LogoHeader />,
         headerTitleAlign: "center",
         headerStyle: {
@@ -28,31 +29,11 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="futbol"
+        name="padel"
         options={{
-          title: "Futbol",
+          title: "Padel",
           tabBarIcon: ({ color }) => (
-            <FontAwesome size={26} name="soccer-ball-o" color={color} />
-          ),
-        }}
-      />
-
-      <Tabs.Screen
-        name="basket"
-        options={{
-          title: "Basket",
-          tabBarIcon: ({ color }) => (
-            <FontAwesome size={26} name="dribbble" color={color} />
-          ),
-        }}
-      />
-
-      <Tabs.Screen
-        name="f1"
-        options={{
-          title: "F1",
-          tabBarIcon: ({ color }) => (
-            <FontAwesome size={26} name="car" color={color} />
+            <FontAwesome size={22} name="star" color={color} />
           ),
         }}
       />
@@ -62,17 +43,37 @@ export default function TabLayout() {
         options={{
           title: "Tennis",
           tabBarIcon: ({ color }) => (
-            <FontAwesome size={26} name="circle-thin" color={color} />
+            <FontAwesome size={22} name="circle-thin" color={color} />
           ),
         }}
       />
 
       <Tabs.Screen
-        name="padel"
+        name="futbol"
         options={{
-          title: "Padel",
+          title: "Fútbol",
           tabBarIcon: ({ color }) => (
-            <FontAwesome size={26} name="star" color={color} />
+            <FontAwesome size={22} name="soccer-ball-o" color={color} />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="basket"
+        options={{
+          title: "Basket",
+          tabBarIcon: ({ color }) => (
+            <FontAwesome size={22} name="dribbble" color={color} />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="f1"
+        options={{
+          title: "F1",
+          tabBarIcon: ({ color }) => (
+            <FontAwesome size={22} name="car" color={color} />
           ),
         }}
       />
@@ -82,7 +83,7 @@ export default function TabLayout() {
         options={{
           title: "Noticias",
           tabBarIcon: ({ color }) => (
-            <FontAwesome size={26} name="newspaper-o" color={color} />
+            <FontAwesome size={22} name="newspaper-o" color={color} />
           ),
         }}
       />
@@ -92,7 +93,7 @@ export default function TabLayout() {
         options={{
           title: "Carrito",
           tabBarIcon: ({ color }) => (
-            <FontAwesome size={26} name="shopping-cart" color={color} />
+            <FontAwesome size={22} name="shopping-cart" color={color} />
           ),
         }}
       />
