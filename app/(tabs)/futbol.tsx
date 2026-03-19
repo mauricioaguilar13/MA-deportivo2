@@ -9,6 +9,15 @@ import {
   View
 } from "react-native";
 import { agregarAlCarrito } from "../store/cart";
+import { View, Text } from "react-native";
+
+export default function Futbol() {
+  return (
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Text>Fútbol</Text>
+    </View>
+  );
+}
 
 interface Producto {
   id: number;
