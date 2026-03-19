@@ -28,53 +28,13 @@ export default function PadelScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { 
-    flex: 1, 
-    backgroundColor: '#f3f4f6', 
-    padding: 16 
-  },
-  header: { 
-    fontSize: 24, 
-    fontWeight: 'bold', 
-    color: '#1f2937', 
-    marginBottom: 16 
-  },
-  card: { 
-    backgroundColor: '#ffffff', 
-    borderRadius: 16, 
-    padding: 16, 
-    marginBottom: 16 
-  },
-  imagePlaceholder: { 
-    width: '100%', 
-    height: 120, 
-    borderRadius: 8, 
-    marginBottom: 12 
-  },
-  productName: { 
-    fontSize: 18, 
-    fontWeight: '600', 
-    color: '#374151' 
-  },
-  row: { 
-    flexDirection: 'row', 
-    justifyContent: 'space-between', 
-    alignItems: 'center', 
-    marginTop: 8 
-  },
-  price: { 
-    fontSize: 20, 
-    fontWeight: 'bold', 
-    color: '#2563eb' 
-  },
-  button: { 
-    backgroundColor: '#2563eb', 
-    paddingVertical: 8, 
-    paddingHorizontal: 16, 
-    borderRadius: 20 
-  },
-  buttonText: { 
-    color: '#ffffff', 
-    fontWeight: '500' 
-  }
+  container: { flex: 1, backgroundColor: '#f3f4f6', padding: 16 },
+  header: { fontSize: 24, fontWeight: 'bold', color: '#1f2937', marginBottom: 16 },
+  card: { backgroundColor: '#ffffff', borderRadius: 16, padding: 16, marginBottom: 16 },
+  imagePlaceholder: { width: '100%', height: 120, borderRadius: 8, marginBottom: 12 },
+  productName: { fontSize: 18, fontWeight: '600', color: '#374151' },
+  row: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 8 },
+  price: { fontSize: 20, fontWeight: 'bold', color: '#2563eb' },
+  button: { backgroundColor: '#2563eb', paddingVertical: 8, paddingHorizontal: 16, borderRadius: 20 },
+  buttonText: { color: '#ffffff', fontWeight: '500' }
 });
