@@ -60,6 +60,26 @@ export default function TabLayout() {
       />
 
       <Tabs.Screen
+        name="tennis"
+        options={{
+          title: "Tennis",
+          tabBarIcon: ({ color }) => (
+            <FontAwesome size={26} name="circle-thin" color={color} />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="padel"
+        options={{
+          title: "Padel",
+          tabBarIcon: ({ color }) => (
+            <FontAwesome size={26} name="star" color={color} />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
         name="noticias"
         options={{
           title: "Noticias",
@@ -79,10 +99,8 @@ export default function TabLayout() {
         }}
       />
 
-      {/* Ocultamos las que no necesitamos en el menú inferior */}
+      {/* Ocultamos el index de la barra inferior para que no se repita */}
       <Tabs.Screen name="index" options={{ href: null }} />
-      <Tabs.Screen name="tennis" options={{ href: null }} />
-      <Tabs.Screen name="padel" options={{ href: null }} />
     </Tabs>
   );
 }
