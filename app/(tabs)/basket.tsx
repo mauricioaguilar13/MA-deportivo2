@@ -1,102 +1,29 @@
-import React from "react";
-import {
-  Button,
-  Image,
-  ImageSourcePropType,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
-import { agregarAlCarrito } from "../store/cart";
-import { View, Text } from "react-native";
+import React from 'react';
+import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 
-export default function Basket() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Basket</Text>
-    </View>
-  );
-}
-
-interface Producto {
-  id: number;
-  nombre: string;
-  precio: number;
-  imagen: ImageSourcePropType;
-}
-
-const PRODUCTOS_BASKET: Producto[] = [
-  {
-    id: 1,
-    nombre: "Camiseta NBA",
-    precio: 50,
-    imagen: require("../../assets/images/nba.jpg"),
-  },
-  {
-    id: 2,
-    nombre: "Zapatillas Basket",
-    precio: 120,
-    imagen: require("../../assets/images/zapatillas.jpg"),
-  },
-  {
-    id: 3,
-    nombre: "Balón Basket",
-    precio: 35,
-    imagen: require("../../assets/images/balon.jpg"),
-  },
-  {
-    id: 4,
-    nombre: "Mangas Deportivas",
-    precio: 15,
-    imagen: require("../../assets/images/mangas.jpg"),
-  },
-  {
-    id: 5,
-    nombre: "Mochila Deportiva",
-    precio: 40,
-    imagen: require("../../assets/images/mochila.jpg"),
-  },
-];
-
-export default function Basket() {
-  function comprar(item: Producto) {
-    agregarAlCarrito({ nombre: item.nombre, precio: item.precio });
-    alert(`${item.nombre} agregado al carrito`);
-  }
+export default function BasketScreen() {
+  const productos = [
+    { id: 1, nombre: "Balón Spalding NBA", precio: "$60", color: "bg-orange-500" },
+    { id: 2, nombre: "Camiseta Lakers #23", precio: "$90", color: "bg-purple-600" },
+    { id: 3, nombre: "Red de Repuesto", precio: "$10", color: "bg-gray-300" },
+  ];
 
   return (
-    <ScrollView style={styles.container}>
-      <Text style={styles.titulo}>Artículos de Basket</Text>
-      {PRODUCTOS_BASKET.map((item) => (
-        <View key={item.id} style={styles.card}>
-          <Image source={item.imagen} style={styles.img} />
-          <Text style={styles.nombre}>{item.nombre}</Text>
-          <Text style={styles.precio}>${item.precio}</Text>
-          <Button title="Agregar al carrito" onPress={() => comprar(item)} />
+    <ScrollView className="flex-1 bg-orange-50 p-4">
+      <Text className="text-2xl font-black text-orange-900 mb-4">Basket Zone</Text>
+      
+      {productos.map((item) => (
+        <View key={item.id} className="bg-white rounded-3xl p-5 mb-4 shadow-lg">
+          <View className={`w-full h-40 rounded-2xl mb-4 ${item.color}`} />
+          <Text className="text-xl font-bold text-gray-800">{item.nombre}</Text>
+          <View className="flex-row justify-between items-center mt-3">
+            <Text className="text-orange-600 font-black text-2xl">{item.precio}</Text>
+            <TouchableOpacity className="bg-orange-500 px-5 py-3 rounded-2xl">
+              <Text className="text-white font-bold text-center">Añadir</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       ))}
     </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: { flex: 1, padding: 15, backgroundColor: "#f5f5f5" },
-  titulo: {
-    fontSize: 26,
-    fontWeight: "bold",
-    marginBottom: 20,
-    textAlign: "center",
-  },
-  card: {
-    backgroundColor: "#fff",
-    padding: 15,
-    marginBottom: 15,
-    borderRadius: 12,
-    alignItems: "center",
-    elevation: 3,
-  },
-  img: { width: 130, height: 130, marginBottom: 10, resizeMode: "contain" },
-  nombre: { fontSize: 18, fontWeight: "600" },
-  precio: { fontSize: 16, color: "#888", marginBottom: 10 },
-});
